@@ -1,0 +1,13 @@
+rescript = 1
+rule astj
+  command = "F:\mowtwo\rescript\vite-rescript-app\node_modules\.pnpm\rescript@9.1.4\node_modules\rescript\win32\bsc.exe"  -bs-v 9.1.4  -absname -bs-ast -o $out $i
+o src\Main.ast : astj ..\..\src\Main.res
+rule deps
+  command = "F:\mowtwo\rescript\vite-rescript-app\node_modules\.pnpm\rescript@9.1.4\node_modules\rescript\win32\bsb_helper.exe" -hash 6fffe76f970de4b8252db557d5143248 $in
+  restat = 1
+o src\Main.d : deps src\Main.ast
+rule mij
+  command = "F:\mowtwo\rescript\vite-rescript-app\node_modules\.pnpm\rescript@9.1.4\node_modules\rescript\win32\bsc.exe" -I src   -bs-package-name vite-rescript-app -bs-package-output es6:$in_d:.bs.js $i
+  dyndep = 1
+  restat = 1
+o src\Main.cmj src\Main.cmi ..\..\src\Main.bs.js : mij src\Main.ast

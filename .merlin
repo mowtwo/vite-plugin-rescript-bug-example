@@ -1,0 +1,8 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx "F:\mowtwo\rescript\vite-rescript-app\node_modules\.pnpm\rescript@9.1.4\node_modules\rescript\win32\bsc.exe -as-ppx "
+S F:\mowtwo\rescript\vite-rescript-app\node_modules\.pnpm\rescript@9.1.4\node_modules\rescript\lib\ocaml
+B F:\mowtwo\rescript\vite-rescript-app\node_modules\.pnpm\rescript@9.1.4\node_modules\rescript\lib\ocaml
+FLG -w +a-4-9-20-40-41-42-50-61-102
+S src
+B lib\bs\src
+####BSB GENERATED: NO EDIT}
